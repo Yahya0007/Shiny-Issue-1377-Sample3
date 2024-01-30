@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Shell
+    x:Class="StaffApp.Views.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
+    xmlns:local="clr-namespace:StaffApp.Views"
+    ios:Page.UseSafeArea="true"
+    Style="{StaticResource ShellStyle}">
+
+    <Shell.FlyoutHeader>
+        <Grid BackgroundColor="White">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="300" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5" />
+                <RowDefinition Height="60" />
+                <RowDefinition Height="5" />
+            </Grid.RowDefinitions>
+
+            <Image
+                Grid.Row="1"
+                Grid.Column="1"
+                HorizontalOptions="Center"
+                Source="logo.png"
+                VerticalOptions="Center"
+                WidthRequest="250" />
+        </Grid>
+    </Shell.FlyoutHeader>
+
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Color x:Key="MenuIcons">#552E5D</Color>
+
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="{StaticResource GlobalBackgroundColour}" />
+                <Setter Property="Shell.ForegroundColor" Value="{StaticResource GlobalForegroundColour}" />
+                <Setter Property="Shell.TitleColor" Value="#474747" />
+                <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
+                <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource GlobalBackgroundColour}" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="{StaticResource GlobalForegroundColour}" />
+                <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF" />
+                <Setter Property="Shell.TabBarTitleColor" Value="{StaticResource GlobalForegroundColour}" />
+            </Style>
+            <Style BasedOn="{StaticResource BaseStyle}" TargetType="FlyoutItem" />
+
+            <Style Class="FlyoutItemLabelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="#474747" />
+                <Setter Property="FontFamily" Value="AvenirRegular" />
+            </Style>
+
+            <Style
+                ApplyToDerivedTypes="True"
+                Class="FlyoutItemLayoutStyle"
+                TargetType="Layout">
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="{x:OnPlatform iOS=White}" />
+                                    <Setter TargetName="FlyoutItemLabel" Property="Label.TextColor" Value="#474747" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Selected">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="White" />
+                                    <Setter TargetName="FlyoutItemLabel" Property="Label.TextColor" Value="#552E5D" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+
+            <Style
+                ApplyToDerivedTypes="True"
+                Class="MenuItemLayoutStyle"
+                TargetType="Layout">
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter TargetName="FlyoutItemLabel" Property="Label.TextColor" Value="#474747" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+
+            <Style
+                x:Key="MenuIconsShell"
+                BasedOn="{StaticResource BaseStyle}"
+                TargetType="Element">
+                <Setter Property="Shell.ForegroundColor" Value="#552E5D" />
+                <Setter Property="Shell.BackgroundColor" Value="White" />
+            </Style>
+
+        </ResourceDictionary>
+    </Shell.Resources>
+
+    <Shell.MenuItemTemplate>
+        <DataTemplate>
+            <Grid Padding="15,0,0,0" VerticalOptions="Fill">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.13*" />
+                    <ColumnDefinition Width="0.8*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50" />
+                </Grid.RowDefinitions>
+                <Image
+                    Margin="7"
+                    HorizontalOptions="Center"
+                    Source="{Binding Icon}"
+                    VerticalOptions="Center" />
+                <Label
+                    Grid.Column="1"
+                    FontSize="15"
+                    HorizontalTextAlignment="Start"
+                    Style="{DynamicResource StyleFontMedium}"
+                    Text="{Binding Title}"
+                    VerticalTextAlignment="Center" />
+            </Grid>
+        </DataTemplate>
+    </Shell.MenuItemTemplate>
+</Shell>

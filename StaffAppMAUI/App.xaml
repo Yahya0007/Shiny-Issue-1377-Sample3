@@ -1,0 +1,107 @@
+<Application
+    x:Class="StaffApp.App"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:dxco="clr-namespace:DevExpress.Maui.Controls;assembly=DevExpress.Maui.Controls"
+    xmlns:local="clr-namespace:StaffApp"
+    xmlns:dxe="clr-namespace:DevExpress.Maui.Editors;assembly=DevExpress.Maui.Editors"    
+    xmlns:windows="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.WindowsSpecific;assembly=Microsoft.Maui.Controls"
+    xmlns:dxcv="clr-namespace:DevExpress.Maui.CollectionView;assembly=DevExpress.Maui.CollectionView"
+    xmlns:dxdf="clr-namespace:DevExpress.Maui.DataForm;assembly=DevExpress.Maui.Editors"
+    windows:Application.ImageDirectory="Assets">
+
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!--<ResourceDictionary Source="Resources/Styles/LightTheme.xaml" />-->
+                <ResourceDictionary Source="Resources/Styles/DarkTheme.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{DynamicResource BackgroundThemeColor}" />
+                <Setter Property="BarTextColor" Value="White" />
+            </Style>
+
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="{DynamicResource TextThemeColor}" />
+            </Style>
+
+            <Style ApplyToDerivedTypes="True" TargetType="Page">
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="BackgroundColor" Value="{DynamicResource BackgroundThemeColor}" />
+            </Style>
+
+            <Style x:Key="ShellStyle" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="{DynamicResource BackgroundThemeColor}" />
+                <Setter Property="Shell.ForegroundColor" Value="{DynamicResource TextThemeColor}" />
+                <Setter Property="Shell.TitleColor" Value="{DynamicResource TextThemeColor}" />
+                <Setter Property="Shell.DisabledColor" Value="{StaticResource DisabledColor}" />
+                <Setter Property="Shell.UnselectedColor" Value="{StaticResource UnselectedColor}" />
+                <Setter Property="Shell.NavBarHasShadow" Value="False" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource TabBarBackgroundColor}" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="{StaticResource TabBarForegroundColor}" />
+                <Setter Property="Shell.TabBarTitleColor" Value="{StaticResource TabBarTitleColor}" />
+                <Setter Property="Shell.TabBarUnselectedColor" Value="{StaticResource TabBarUnselectedColor}" />
+            </Style>
+
+            <Style x:Key="ShellStyleiOS" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="{DynamicResource BackgroundThemeColor}" />
+            </Style>
+
+            <x:String x:Key="ionicons">ionicons</x:String>
+            <x:String x:Key="HomeIcon">&#xf30c;</x:String>
+
+            <Color x:Key="GlobalBackgroundColour">#FFFFFF</Color>
+            <Color x:Key="GlobalForegroundColour">#552E5D</Color>
+
+            <Style x:Key="StyleCollectionView" TargetType="CollectionView" >
+            </Style>
+
+            <Style x:Key="StyleCollectionViewdx" TargetType="dxcv:DXCollectionView" >
+            </Style>
+
+            <!--<Style x:Key="StyleFeedbackdx" TargetType="dxdf:DataFormView">
+                <Setter Property="EditorLabelColor" Value="{DynamicResource TextThemeColor}"/>
+                <Setter Property="BackgroundColor" Value="{DynamicResource BackgroundThemeColor}"/>
+            </Style>-->
+
+            <!--<Style x:Key="StyleFontMedium" TargetType="Label">
+                <Setter Property="FontFamily" Value="AvenirHeavy" />
+                <Setter Property="TextColor" Value="{AppThemeBinding Light=#1C1B1F, Dark=#E6E1E5}" />
+                <Setter Property="FontSize" Value="13" />
+            </Style>-->
+
+            <!--<Style x:Key="StyleFontMediumCheck" TargetType="CheckBox">
+                <Setter Property="Color" Value="#552E5D" />
+            </Style>
+
+            <Style x:Key="StyleFontMediumdx" TargetType="dxe:TextEdit">
+                <Setter Property="TextFontFamily" Value="AvenirRegular" />
+            </Style>
+
+            <Style x:Key="StyleFontMediumPassworddx" TargetType="dxe:PasswordEdit">
+                <Setter Property="TextFontFamily" Value="AvenirRegular" />
+            </Style>
+
+            <Style x:Key="StyleFontBold" TargetType="Label">
+                <Setter Property="FontFamily" Value="AvenirBlack" />
+                <Setter Property="TextColor" Value="{DynamicResource TextThemeColor}" />
+                <Setter Property="FontSize" Value="14" />
+            </Style>-->
+
+            <Style x:Key="StyleFontFlyout" TargetType="Label">
+                <Setter Property="FontFamily" Value="AvenirRegular" />
+                <Setter Property="FontSize" Value="13" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="TextColor" Value="#9D986E" />
+                <Setter Property="BackgroundColor" Value="#552E5D" />
+            </Style>
+
+            <!--<Style TargetType="dxco:SimpleButton" x:Key="commandButtonStyle">
+                <Setter Property="TextColor" Value="{StaticResource NavigationBarColor}"/>
+                <Setter Property="BackgroundColor" Value="{DynamicResource AccentColor}"/>
+            </Style>-->
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
